@@ -1,12 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import NavigationBar from './custom-components/NavigationBar'
-import Home from './pages/Home'
-import About from './pages/About'
-import Work from './pages/Work'
-import Experience from './pages/Experience'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
 import SinglePageView from './pages/SinglePageView'
 
 function App() {
