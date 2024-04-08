@@ -57,15 +57,15 @@ export default function SinglePageView() {
         observer.disconnect();
       };
     }, []);
-  
+
     return (
       <div className="w-full h-screen flex flex-col items-center">
-        <nav className="flex flex-row items-center justify-center p-4 gap-4 fixed top-0">
+        <nav className="flex flex-row items-center justify-center w-full p-4 gap-4 fixed top-0 bg-[#242424]">
           {NAVIGATION_LINKS.map((link, index) => (
             <div
               key={index}
-              className={`text-white font-bold px-4 py-2 hover:text-red-600 duration-200 ${
-                activeLink === link.text ? 'text-red-600' : ''}`
+              className={`text-white font-bold px-4 py-2 cursor-pointer hover:text-red-600 duration-200 ${
+                activeLink == link.text ? 'text-red-600' : ''}`
               }
               onClick={() =>
                 refs[index]?.current?.scrollIntoView({
@@ -78,7 +78,7 @@ export default function SinglePageView() {
             </div>
           ))}
         </nav>
-        <div className="px-4 max-w-[960px] flex flex-col items-center justify-center">
+        <div className="px-4 max-w-[960px] w-full flex flex-col">
           <div id="homeRef" ref={homeRef}>
             <Home />
           </div>
