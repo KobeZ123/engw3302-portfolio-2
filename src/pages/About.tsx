@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <div className="flex flex-col w-full h-screen justify-center items-start select-none text-start">
+        <div className="flex flex-col lg:flex-row w-full justify-center items-start select-none text-start">
             <h1 className="text-3xl font-bold">About Page</h1>
             <p className="text-xl my-4">
                 Growing up, I have always been a technology enthusiast that enjoys playing video games. 

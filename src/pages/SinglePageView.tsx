@@ -58,9 +58,15 @@ export default function SinglePageView() {
       };
     }, []);
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+      setIsOpen(!isOpen);
+    };
+
     return (
       <div className="w-full h-screen flex flex-col items-center">
-        <nav className="flex flex-row items-center justify-center w-full p-4 gap-4 fixed top-0 bg-[#242424]">
+        {/* <nav className="flex flex-col md:flex-row items-center justify-center w-full p-4 gap-4 fixed top-0 bg-[#242424]">
           {NAVIGATION_LINKS.map((link, index) => (
             <div
               key={index}
@@ -77,9 +83,74 @@ export default function SinglePageView() {
               <h3>{link.text}</h3>
             </div>
           ))}
+        </nav> */}
+        <nav className="flex items-center justify-center w-full p-4 bg-[#242424]">
+          <button
+            className={`md:hidden text-white ${
+              isOpen ? '' : 'w-full'}`}
+            onClick={handleToggle}
+          >
+            {isOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <div className="flex flex-row justify-between">
+                <h3 className="font-bold mx-8">Kobe Zheng</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 end-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+              </div>
+              
+            )}
+          </button>
+          <div
+            className={`${
+              isOpen ? 'block' : 'hidden'
+            } md:flex md:flex-row items-center justify-center md:gap-4`}
+          >
+            {NAVIGATION_LINKS.map((link, index) => (
+              <div
+                key={index}
+                className={`text-white font-bold px-4 py-2 cursor-pointer hover:text-red-600 duration-200 ${
+                  activeLink == link.text ? 'text-red-600' : ''}`
+                }
+                onClick={() =>
+                  refs[index]?.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  })
+                }
+              >
+                <h3>{link.text}</h3>
+              </div>
+            ))}
+          </div>
         </nav>
         <div className="px-4 max-w-[960px] w-full flex flex-col">
-          <div id="homeRef" ref={homeRef}>
+          <div id="homeRef" ref={homeRef} className="my-16">
             <Home />
           </div>
   
@@ -95,10 +166,14 @@ export default function SinglePageView() {
             <Experience />
           </div>
   
-          <div id="contactRef" ref={contactRef}>
+          <div id="contactRef" ref={contactRef} className="my-16">
             <Contact />
           </div>
         </div>
+    
+        <footer className="flex flex-row justify-center items-center w-full text-white m-0 p-4">
+          <h3>Built with React + TailwindCSS</h3>
+        </footer>
       </div>
     );
 }

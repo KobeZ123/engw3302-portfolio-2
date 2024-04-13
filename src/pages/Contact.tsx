@@ -4,10 +4,10 @@ import linkedinLogo from '../../public/linkedin.svg';
 
 export default function Contact() {
     return (
-        <div className="flex flex-col w-full h-screen justify-center items-start select-none text-start">
+        <div className="flex flex-col w-full justify-center items-center lg:items-start select-none text-start">
             <h1 className="text-3xl font-bold">Contact Information</h1>
             <p className="text-xl">Let's connect!</p>
-            <div className="flex flex-row justify-start gap-8 my-4">
+            <div className="flex flex-col lg:flex-row justify-start gap-8 my-4">
                 <ContactIcon icon={githubLogo} link="https://github.com/KobeZ123" alt="Github"/>
                 <ContactIcon icon={outlookLogo} link="mailto:zheng.ko@northeastern.edu" alt="Outlook"/>
                 <ContactIcon icon={linkedinLogo} link="https://www.linkedin.com/in/kobe-zheng/" alt="LinkedIn"/>

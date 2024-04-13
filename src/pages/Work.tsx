@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Work() {
     return (
         <div className="flex flex-col items-start justify-start text-start pt-32">
-            <h1 className="text-3xl font-bold">Experiences</h1>
+            <h1 className="text-3xl font-bold">Works</h1>
             <div className="flex flex-col gap-8 mt-4 w-full">
                 {EXPERIENCES.map((experience, index) => (
                     <WorkCard key={index} {...experience}/>
