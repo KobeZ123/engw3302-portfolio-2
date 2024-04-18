@@ -58,10 +58,9 @@ export default function SinglePageView() {
       };
     }, []);
 
-    useEffect(() => { 
-      console.log("KOBE")
-      console.log(activeLink);
-    }, [activeLink])
+    // useEffect(() => { 
+    //   console.log(activeLink);
+    // }, [activeLink])
 
     const [isOpen, setIsOpen] = useState(false);
 

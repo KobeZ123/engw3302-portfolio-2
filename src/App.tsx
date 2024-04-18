@@ -3,8 +3,15 @@ import './App.css'
 import SinglePageView from './pages/SinglePageView'
 import NotFound from './pages/NotFound'
 import ProjectInfo from './pages/ProjectInfo'
+import { useEffect } from 'react'
 
 function App() {
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <BrowserRouter>
       <div className="w-full h-screen flex flex-col items-center">
