@@ -47,12 +47,11 @@ export default function RubiksCubeProject() {
                 <p className="text-center">~</p>
 
                 <section className="flex flex-col w-full max-w-[700px] items-center my-4">
-                    <a href="https://youtu.be/2gkU19RPisc" target="_blank">
-                        <h4 className="underline font-semibold my-4">Project Video (YouTube)</h4>
-                    </a>
+                    {/* <a href="https://youtu.be/2gkU19RPisc" target="_blank"> */}
+                        <h4 className="underline font-semibold my-4">Project Screenshot</h4>
+                    {/* </a> */}
                     <div className="flex flex-col my-4">
                         <img src={rubiksCubeImage} alt="Rubik's cube grayscale ppm" className="w-[700px] h-auto my-2 border-4 border-white"/>
-
                     </div>
                 </section>
             </div>
