@@ -138,7 +138,7 @@ export default function SinglePageView() {
             {NAVIGATION_LINKS.map((link, index) => (
               <div
                 key={index}
-                className={`font-bold px-4 py-2 cursor-pointer hover:text-red-600 duration-200 ${
+                className={`font-bold px-4 py-2 cursor-pointer hover:text-red-400 duration-200 ${
                   activeLink == link.text ? 'text-red-600' : 'text-white'}`
                 }
                 onClick={() =>
