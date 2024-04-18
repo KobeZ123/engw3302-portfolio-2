@@ -23,8 +23,8 @@ export default function RubiksCubeProject() {
             </div>
             {!authenticated ?
             (
-                <div className="flex flex-col w-full items-center">
-                    <div className="w-[500px]">
+                <div className="flex flex-col items-center">
+                    <div className="w-[500px] max-w-[100vw]">
                         <h3 className="py-4">This is a password-protected project. Please ask administrator for password.</h3>
                         <input
                             className="text-black p-4"
@@ -33,7 +33,10 @@ export default function RubiksCubeProject() {
                         />
                         <button onClick={() => {
                             if (password == import.meta.env.VITE_GRAPHICS_PASSWORD) {
+                                console.log("Authenticated");
                                 setAuthenticated(true);
+                            } else {
+                                console.log("Not authenticated");
                             }
                         }}
                         className="p-4 bg-blue-600 text-white hover:bg-blue-800"
