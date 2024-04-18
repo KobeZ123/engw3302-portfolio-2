@@ -4,7 +4,7 @@ import linkedinLogo from '../../public/linkedin.svg';
 
 export default function Contact() {
     return (
-        <div className="flex flex-col w-full justify-center items-center lg:items-start select-none text-start">
+        <div className="flex flex-col w-full justify-center items-center select-none text-start">
             <h1 className="text-3xl font-bold">Contact Information</h1>
             <p className="text-xl">Let's connect!</p>
             <div className="flex flex-col lg:flex-row justify-start gap-8 my-4">

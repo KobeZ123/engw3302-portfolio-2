@@ -3,13 +3,13 @@ import Home from "./Home";
 import { useEffect, useRef, useState } from "react";
 import About from "./About";
 import Experience from "./Experience";
-import Work from "./Work";
+import Projects from "./Projects";
 import Contact from "./Contact";
 
 const NAVIGATION_LINKS = [
     { text: 'Home', ref: 'homeRef' },
     { text: 'About', ref: 'aboutRef' },
-    { text: 'Work', ref: 'workRef' },
+    { text: 'Projects', ref: 'projectsRef' },
     { text: 'Experience', ref: 'experienceRef' },
     { text: 'Contact', ref: 'contactRef' },
   ];
@@ -18,11 +18,11 @@ const NAVIGATION_LINKS = [
 export default function SinglePageView() {
     const homeRef = useRef<HTMLDivElement | null>(null);
     const aboutRef = useRef<HTMLDivElement | null>(null);
-    const workRef = useRef<HTMLDivElement | null>(null);
+    const projectsRef = useRef<HTMLDivElement | null>(null);
     const experienceRef = useRef<HTMLDivElement | null>(null);
     const contactRef = useRef<HTMLDivElement | null>(null);
 
-    const refs: React.MutableRefObject<HTMLDivElement | null>[] = [homeRef, aboutRef, workRef, experienceRef, contactRef];
+    const refs: React.MutableRefObject<HTMLDivElement | null>[] = [homeRef, aboutRef, projectsRef, experienceRef, contactRef];
   
     const [activeLink, setActiveLink] = useState(NAVIGATION_LINKS[0].text); // Initially set to first link
   
@@ -58,6 +58,11 @@ export default function SinglePageView() {
       };
     }, []);
 
+    useEffect(() => { 
+      console.log("KOBE")
+      console.log(activeLink);
+    }, [activeLink])
+
     const [isOpen, setIsOpen] = useState(false);
 
     const handleToggle = () => {
@@ -84,7 +89,7 @@ export default function SinglePageView() {
             </div>
           ))}
         </nav> */}
-        <nav className="flex items-center justify-center w-full p-4 bg-[#242424]">
+        <nav className="flex items-center justify-center w-full p-4 fixed top-0 bg-[#242424] z-50">
           <button
             className={`md:hidden text-white ${
               isOpen ? '' : 'w-full'}`}
@@ -134,8 +139,8 @@ export default function SinglePageView() {
             {NAVIGATION_LINKS.map((link, index) => (
               <div
                 key={index}
-                className={`text-white font-bold px-4 py-2 cursor-pointer hover:text-red-600 duration-200 ${
-                  activeLink == link.text ? 'text-red-600' : ''}`
+                className={`font-bold px-4 py-2 cursor-pointer hover:text-red-600 duration-200 ${
+                  activeLink == link.text ? 'text-red-600' : 'text-white'}`
                 }
                 onClick={() =>
                   refs[index]?.current?.scrollIntoView({
@@ -158,8 +163,8 @@ export default function SinglePageView() {
             <About />
           </div>
   
-          <div id="workRef" ref={workRef}>
-            <Work />
+          <div id="projectsRef" ref={projectsRef}>
+            <Projects />
           </div>
   
           <div id="experienceRef" ref={experienceRef}>

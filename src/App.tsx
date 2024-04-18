@@ -1,24 +1,24 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import SinglePageView from './pages/SinglePageView'
+import NotFound from './pages/NotFound'
+import ProjectInfo from './pages/ProjectInfo'
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <div className="w-full h-screen flex flex-col items-center">
-    //     <NavigationBar/>
-    //     <div className="px-4 max-w-[960px] flex items-center justify-center">
-    //       <Routes>
-    //         <Route path="/" element={<Home />}/>
-    //         <Route path="/about" element={<About/>}/>
-    //         <Route path="/work" element={<Work/>}/>
-    //         <Route path="/experience" element={<Experience/>}/>
-    //         <Route path="/contact" element={<Contact/>}/>
-    //         <Route path="*" element={<NotFound />} />
-    //       </Routes>
-    //     </div>
-    //   </div>
-    // </BrowserRouter>
-    <SinglePageView />
+    <BrowserRouter>
+      <div className="w-full h-screen flex flex-col items-center">
+        <div className="px-4 max-w-[960px] flex items-center justify-center">
+          <Routes>
+            <Route path="/" element={<SinglePageView />}/>
+            <Route path="projects/:projectId" element={<ProjectInfo />} />
+            
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+    
   )
 }
 
