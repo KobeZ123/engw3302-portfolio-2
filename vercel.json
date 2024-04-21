@@ -1,0 +1,7 @@
+{
+    "routes": [
+      { "src": "/", "dest": "/" },
+      { "src": "/projects", "dest": "/projects" },
+      { "src": "/projects/game-engine-project", "dest": "/projects/game-engine-project" }
+    ]
+  }
