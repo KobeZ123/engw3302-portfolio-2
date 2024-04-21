@@ -1,6 +1,7 @@
 import pcBuildProject from "./../../public/pc-build-project.png";
 import spotifyProject from "./../../public/spotify-project.png";
 import rubiksCubeProject from "./../../public/rubiks-cube-project.png";
+import gameEngineProject from "./../../public/game_engine_architectural_diagram.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
@@ -36,13 +37,13 @@ export default function Projects() {
                             navigate("/projects/rubiks-cube-project")
                         }}
                     />
-                    {/* <ProjectCard 
-                        title="Custom Game Engine" 
-                        imageSrc={rubiksCubeProject}
+                    <ProjectCard 
+                        title="Game Engine Project" 
+                        imageSrc={gameEngineProject}
                         onClick={() => {
-                            navigate("/projects/custom-game-engine")
+                            navigate("/projects/game-engine-project")
                         }}
-                    /> */}
+                    />
                 </div>
                 <h1 className="text-xl font-bold w-full cursor-pointer text-slate-300"
                     onClick={() => {

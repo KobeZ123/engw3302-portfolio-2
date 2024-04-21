@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
-import Home from "./Home";
 import { ReactElement, useEffect } from "react";
 import NotFound from "./NotFound";
 import SpotifyProject from "./projects/SpotifyProject";
 import PcBuildProject from "./projects/PcBuildProject";
 import RubiksCubeProject from "./projects/RubiksCubeProject";
+import GameEngineProject from "./projects/GameEngineProject";
 
 export default function ProjectInfo() {
     useEffect(() => {
@@ -27,5 +27,5 @@ const PROJECTS: Projects = {
     "spotify-project": <SpotifyProject />,
     "pc-build-project": <PcBuildProject />,
     "rubiks-cube-project": <RubiksCubeProject />,
-    "custom-game-engine": <Home />
+    "game-engine-project": <GameEngineProject />
 }
