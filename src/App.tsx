@@ -18,8 +18,7 @@ function App() {
         <div className="px-4 max-w-[960px] flex items-center justify-center">
           <Routes>
             <Route path="/" element={<SinglePageView />}/>
-            <Route path="projects/:projectId" element={<ProjectInfo />} />
-            
+            <Route path="/projects/:projectId" element={<ProjectInfo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
